@@ -126,11 +126,11 @@
     },
     {
       "command": "openNewTabDropdown",
-      "keys": "ctrl+t"
+      "keys": "alt+t"
     },
     {
       "command": "closePane",
-      "keys": "ctrl+w"
+      "keys": "alt+w"
     },
     {
       "command": "nextTab",
