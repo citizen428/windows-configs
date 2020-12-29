@@ -67,6 +67,7 @@ Set-Alias -Name ll -Value Get-ChildItem
 Set-Alias -Name which -Value Get-Command
 
 Set-Alias -Name open -Value Invoke-Item
+Set-Alias -Name g -Value git
 
 function Get-IP {
   (Invoke-WebRequest 'https://api.ipify.org').Content
