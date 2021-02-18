@@ -15,9 +15,12 @@ ECHO ===================
 ECHO Installing packages
 ECHO ===================
 CALL scoop install^
+ 7zip^
  aria2^
  delta^
  git^
+ greenshot^
+ insomnia^
  lab^
  neovim-nightly^
  qbittorrent^
