@@ -1,80 +1,80 @@
 function Edit-Profile { code $PROFILE }
-Set-Alias -Name profile -Value Edit-Profile
+Set-Alias -Name profile -Value Edit-ProfilE
 
-### Readline settings
+### readline settings
 
-# The edit mode $DEITY intended
-Set-PSReadLineOption -EditMode Emacs
+# the edit mode $DEITY intended
+Set-PSReadLineOption -EditMode emacs
 
-# Predictive Intellisense, similar to e.g. Fish shell
-# Needs PSReadLine >= 2.1.0 (included in Powershell 7.1+)
-Set-PSReadLineOption -PredictionSource History
+# predictive intellisense, similar to e.g. fish shell
+# needs psreadline >= 2.1.0 (included in powershell 7.1+)
+Set-PSReadLineOption -PredictionSource history
 
-# Fish-like history search with up/down arrow
+# fish-like history search with up/down arrow
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
-Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
-Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadLineKeyHandler -key uparrow -Function historysearchbackward
+Set-PSReadLineKeyHandler -key downarrow -Function historysearchforward
 
-### Custom functions and aliases
+### custom functions and aliases
 
 function Get-Version {
-  Get-CimInstance -ClassName Win32_OperatingSystem |
-  Select-Object @{Expression = { $_.Caption + " (" + $_.BuildNumber + ")" } } |
+  Get-CimInstance -ClassName win32_operatingsystem |
+  Select-Object @{expression = { $_.caption + " (" + $_.buildnumber + ")" } } |
   Format-Table -HideTableHeaders
 }
 Set-Alias -Name version -Value Get-Version
 
-function Measure-Time {
+function measure-time {
   param(
-    [Parameter(Mandatory = $true)]
-    $Cmd
+    [parameter(mandatory = $true)]
+    $cmd
   )
   Measure-Command { Invoke-Expression $cmd | Out-Default } |
-  Select-Object -ExpandProperty TotalMilliseconds
+  Select-Object -ExpandProperty totalmilliseconds
 }
-Set-Alias -Name time -Value Measure-Time
+Set-Alias -Name time -Value measure-time
 
-function Update-File {
+function update-file {
   param(
-    [Parameter(Mandatory = $true)]
+    [parameter(mandatory = $true)]
     $file
   )
 
   if (Test-Path $file) {
-    (Get-ChildItem $file).LastWriteTime = Get-Date
+    (Get-ChildItem $file).lastwritetime = Get-Date
   }
   else {
     New-Item -ItemType file $file
   }
 }
-Set-Alias -Name touch -Value Update-File
+Set-Alias -Name touch -Value update-file
 
-function Get-Download {
+function get-download {
   param(
-    [Parameter(Mandatory = $true)]
+    [parameter(mandatory = $true)]
     $url
   )
 
-  $prog = (Get-Command aria2c).Source
+  $prog = (Get-Command aria2c).source
   $opts = '--file-allocation=none', $url
   & $prog $opts
 }
-Set-Alias -Name down -Value Get-Download
+Set-Alias -Name down -Value get-download
+function get-ip {
+  (Invoke-WebRequest 'https://api.ipify.org').content
+}
 
-# Unix-like aliases/functions
+Set-Alias -Name ip -Value get-ip
 
-Set-Alias -Name ll -Value Get-ChildItem
-Set-Alias -Name which -Value Get-Command
+# unix-like aliases/functions
 
-Set-Alias -Name open -Value Invoke-Item
+Set-Alias -Name ll -Value get-childitem
+Set-Alias -Name which -Value get-command
+
+Set-Alias -Name open -Value invoke-item
 Set-Alias -Name g -Value git
 
-function Get-IP {
-  (Invoke-WebRequest 'https://api.ipify.org').Content
-}
-Set-Alias -Name ip -Value Get-IP
+### misc
 
-### Misc
-
-# Prompt
+# prompt
 Invoke-Expression (&starship init powershell)
