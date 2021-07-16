@@ -1,7 +1,10 @@
+Import-Module posh-git
 function Edit-Profile { code $PROFILE }
-Set-Alias -Name profile -Value Edit-ProfilE
+Set-Alias -Name profile -Value Edit-Profile
 
 ### readline settings
+
+Set-PSReadlineOption -BellStyle None
 
 # the edit mode $DEITY intended
 Set-PSReadLineOption -EditMode emacs
@@ -12,8 +15,9 @@ Set-PSReadLineOption -PredictionSource history
 
 # fish-like history search with up/down arrow
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
-Set-PSReadLineKeyHandler -key uparrow -Function historysearchbackward
-Set-PSReadLineKeyHandler -key downarrow -Function historysearchforward
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 ### custom functions and aliases
 
@@ -24,19 +28,19 @@ function Get-Version {
 }
 Set-Alias -Name version -Value Get-Version
 
-function measure-time {
+function Measure-Time {
   param(
-    [parameter(mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     $cmd
   )
   Measure-Command { Invoke-Expression $cmd | Out-Default } |
   Select-Object -ExpandProperty totalmilliseconds
 }
-Set-Alias -Name time -Value measure-time
+Set-Alias -Name time -Value Measure-Time
 
-function update-file {
+function Update-File {
   param(
-    [parameter(mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     $file
   )
 
@@ -47,11 +51,11 @@ function update-file {
     New-Item -ItemType file $file
   }
 }
-Set-Alias -Name touch -Value update-file
+Set-Alias -Name touch -Value Update-File
 
-function get-download {
+function Get-Download {
   param(
-    [parameter(mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     $url
   )
 
@@ -59,19 +63,29 @@ function get-download {
   $opts = '--file-allocation=none', $url
   & $prog $opts
 }
-Set-Alias -Name down -Value get-download
-function get-ip {
+Set-Alias -Name down -Value Get-Download
+
+function Get-Ip {
   (Invoke-WebRequest 'https://api.ipify.org').content
 }
+Set-Alias -Name ip -Value Get-Ip
 
-Set-Alias -Name ip -Value get-ip
+function New-Directory {
+  param(
+    [Parameter(Mandatory = $true)]
+    $directory
+  )
+
+  New-Item -ItemType "directory" -Path $directory && Set-Location $directory
+}
+Set-Alias -Name mcd -Value New-Directory
 
 # unix-like aliases/functions
 
-Set-Alias -Name ll -Value get-childitem
-Set-Alias -Name which -Value get-command
+Set-Alias -Name ll -Value Get-ChildItem
+Set-Alias -Name which -Value Get-Command
 
-Set-Alias -Name open -Value invoke-item
+Set-Alias -Name open -Value Invoke-Item
 Set-Alias -Name g -Value git
 
 ### misc
