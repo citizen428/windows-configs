@@ -1,12 +1,57 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
             "command": "togglePaneZoom",
             "keys": "alt+shift+z"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 3
+            },
+            "keys": "alt+4"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 7
+            },
+            "keys": "alt+8"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+plus"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+minus"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 8
+            },
+            "keys": "alt+9"
+        },
+        {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -14,91 +59,60 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": {
-                "action": "switchToTab",
-                "index": 8
-            },
-            "keys": "alt+9"
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "split": "horizontal",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+-"
-        },
-        {
-            "command": "openNewTabDropdown",
-            "keys": "alt+t"
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "split": "vertical",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+plus"
-        },
-        {
-            "command": {
-                "action": "switchToTab",
-                "index": 1
-            },
-            "keys": "alt+2"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": {
-                "action": "switchToTab",
-                "index": 0
-            },
-            "keys": "alt+1"
-        },
-        {
-            "command": "closePane",
-            "keys": "alt+w"
-        },
-        {
-            "command": {
-                "action": "switchToTab",
-                "index": 2
-            },
-            "keys": "alt+3"
-        },
-        {
-            "command": {
-                "action": "switchToTab",
-                "index": 3
-            },
-            "keys": "alt+4"
-        },
-        {
-            "command": {
-                "action": "switchToTab",
-                "index": 7
-            },
-            "keys": "alt+8"
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 4
             },
             "keys": "alt+5"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 1
+            },
+            "keys": "alt+2"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 0
+            },
+            "keys": "alt+1"
+        },
+        {
+            "command": "openNewTabDropdown",
+            "keys": "alt+t"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 5
             },
             "keys": "alt+6"
         },
         {
-            "command": {
+            "command": "closePane",
+            "keys": "alt+w"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 2
+            },
+            "keys": "alt+3"
+        },
+        {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 6
             },
@@ -109,52 +123,61 @@
     "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "multiLinePasteWarning": false,
-    "profiles": {
-        "defaults": {
+    "profiles": 
+    {
+        "defaults": 
+        {
             "bellStyle": "none",
-            "fontFace": "FiraCode NF",
-            "fontSize": 12
-        },
-        "list": [
+            "colorScheme": "Nord",
+            "font": 
             {
-                "colorScheme": "Monokai Cmder",
+                "face": "FiraCode NF",
+                "size": 12
+            },
+            "padding": "0"
+        },
+        "list": 
+        [
+            {
                 "commandline": "pwsh.exe -nologo",
-                "fontFace": "Cascadia Code PL",
+                "font": 
+                {
+                    "face": "Cascadia Code PL"
+                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "colorScheme": "One Half Dark",
                 "commandline": "wsl.exe -d Ubuntu",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "icon": "C:\\Users\\me\\OneDrive\\Pictures\\WSL\\cof_orange_hex.png",
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Ubuntu/home/michi/src/work/forem"
+                "startingDirectory": "/home/michi/src/work/forem"
             },
             {
-                "colorScheme": "Palenight",
                 "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
                 "hidden": false,
                 "icon": "C:\\Users\\me\\OneDrive\\Pictures\\WSL\\arch.png",
                 "name": "Arch",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Arch/home/michi"
+                "startingDirectory": "/home/michi"
             },
             {
                 "antialiasingMode": "grayscale",
                 "colorScheme": "Vintage",
                 "commandline": "ssh -t tilde \"tmux attach\"",
                 "experimental.retroTerminalEffect": false,
+                "guid": "{ef73b103-0267-5321-9a6f-e3d8718b7aac}",
                 "icon": "C:\\Users\\me\\OneDrive\\Pictures\\WSL\\openbsd.png",
                 "name": "tilde.institute",
                 "tabTitle": "tilde.institute"
             },
             {
-                "colorScheme": "Tango Dark",
+                "colorScheme": "Monokai Cmder",
                 "commandline": "cmd.exe",
                 "experimental.retroTerminalEffect": false,
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -176,13 +199,33 @@
             {
                 "closeOnExit": "always",
                 "commandline": "%PROGRAMFILES(x86)%\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\Roslyn\\csi.exe",
+                "guid": "{88d9fb1a-056a-5a98-8999-666a842d1a74}",
                 "hidden": true,
                 "icon": "%PROGRAMFILES(x86)%\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\ManagedLanguages\\VBCSharp\\LanguageServices\\Interactive\\Resources\\ScriptFile.ico",
                 "name": "C#"
+            },
+            {
+                "guid": "{ef8f515f-d0b8-553e-9d3b-879ef1e541fe}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2022 [Preview]",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{6820b132-7374-599e-8fd2-4b630a1c17cb}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2022 [Preview]",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{c397f356-5e7b-55bc-956b-8cb4b9762c26}",
+                "hidden": false,
+                "name": "NixOS",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -253,6 +296,29 @@
             "yellow": "#B6B649"
         },
         {
+            "background": "#2E3440",
+            "black": "#3B4252",
+            "blue": "#81A1C1",
+            "brightBlack": "#4C566A",
+            "brightBlue": "#81A1C1",
+            "brightCyan": "#8FBCBB",
+            "brightGreen": "#A3BE8C",
+            "brightPurple": "#B48EAD",
+            "brightRed": "#BF616A",
+            "brightWhite": "#ECEFF4",
+            "brightYellow": "#EBCB8B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#88C0D0",
+            "foreground": "#D8DEE9",
+            "green": "#A3BE8C",
+            "name": "Nord",
+            "purple": "#B48EAD",
+            "red": "#BF616A",
+            "selectionBackground": "#FFFFFF",
+            "white": "#E5E9F0",
+            "yellow": "#EBCB8B"
+        },
+        {
             "background": "#282C34",
             "black": "#282C34",
             "blue": "#61AFEF",
@@ -297,29 +363,6 @@
             "selectionBackground": "#FFFFFF",
             "white": "#FAFAFA",
             "yellow": "#C18301"
-        },
-        {
-            "background": "#292D3E",
-            "black": "#434759",
-            "blue": "#82AAFF",
-            "brightBlack": "#434758",
-            "brightBlue": "#9CC4FF",
-            "brightCyan": "#A3F7FF",
-            "brightGreen": "#DDFFA7",
-            "brightPurple": "#E1ACFF",
-            "brightRed": "#FF8B92",
-            "brightWhite": "#FEFEFE",
-            "brightYellow": "#FFE585",
-            "cursorColor": "#D0D0D0",
-            "cyan": "#89DDFF",
-            "foreground": "#959DCB",
-            "green": "#C3E88D",
-            "name": "Palenight",
-            "purple": "#C792EA",
-            "red": "#F07178",
-            "selectionBackground": "#607C8B",
-            "white": "#D0D0D0",
-            "yellow": "#FFCB6B"
         },
         {
             "background": "#002B36",
