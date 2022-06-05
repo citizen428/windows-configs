@@ -4,10 +4,6 @@
     "actions": 
     [
         {
-            "command": "togglePaneZoom",
-            "keys": "alt+shift+z"
-        },
-        {
             "command": 
             {
                 "action": "switchToTab",
@@ -19,18 +15,17 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 7
+                "index": 4
             },
-            "keys": "alt+8"
+            "keys": "alt+5"
         },
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "right",
-                "splitMode": "duplicate"
+                "action": "switchToTab",
+                "index": 0
             },
-            "keys": "alt+shift+plus"
+            "keys": "alt+1"
         },
         {
             "command": 
@@ -45,9 +40,22 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 8
+                "index": 7
             },
-            "keys": "alt+9"
+            "keys": "alt+8"
+        },
+        {
+            "command": "togglePaneZoom",
+            "keys": "alt+shift+z"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+plus"
         },
         {
             "command": 
@@ -62,9 +70,17 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 4
+                "index": 5
             },
-            "keys": "alt+5"
+            "keys": "alt+6"
+        },
+        {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 8
+            },
+            "keys": "alt+9"
         },
         {
             "command": 
@@ -75,28 +91,12 @@
             "keys": "alt+2"
         },
         {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 0
-            },
-            "keys": "alt+1"
-        },
-        {
             "command": "openNewTabDropdown",
             "keys": "alt+t"
         },
         {
             "command": "paste",
             "keys": "ctrl+v"
-        },
-        {
-            "command": 
-            {
-                "action": "switchToTab",
-                "index": 5
-            },
-            "keys": "alt+6"
         },
         {
             "command": "closePane",
@@ -142,21 +142,12 @@
                 "commandline": "pwsh.exe -nologo",
                 "font": 
                 {
-                    "face": "Cascadia Code PL"
+                    "face": "FiraCode NF"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
-            },
-            {
-                "commandline": "wsl.exe -d Ubuntu",
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": false,
-                "icon": "C:\\Users\\me\\OneDrive\\Pictures\\WSL\\cof_orange_hex.png",
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "/home/michi/src/work/forem"
             },
             {
                 "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
@@ -165,6 +156,14 @@
                 "name": "Arch",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "/home/michi"
+            },
+            {
+                "guid": "{c397f356-5e7b-55bc-956b-8cb4b9762c26}",
+                "hidden": false,
+                "icon": "C:\\Users\\me\\OneDrive\\Pictures\\WSL\\nixos.png",
+                "name": "NixOS",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "/home/me"
             },
             {
                 "antialiasingMode": "grayscale",
@@ -178,7 +177,6 @@
             },
             {
                 "colorScheme": "Monokai Cmder",
-                "commandline": "cmd.exe",
                 "experimental.retroTerminalEffect": false,
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
@@ -191,7 +189,6 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "commandline": "powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": true,
                 "name": "Windows PowerShell"
@@ -215,12 +212,6 @@
                 "hidden": true,
                 "name": "Developer PowerShell for VS 2022 [Preview]",
                 "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{c397f356-5e7b-55bc-956b-8cb4b9762c26}",
-                "hidden": false,
-                "name": "NixOS",
-                "source": "Windows.Terminal.Wsl"
             }
         ]
     },

@@ -1,4 +1,6 @@
-Import-Module posh-git
+Import-Module -Name posh-git
+Import-Module -Name Terminal-Icons
+
 function Edit-Profile { code $PROFILE }
 Set-Alias -Name profile -Value Edit-Profile
 
